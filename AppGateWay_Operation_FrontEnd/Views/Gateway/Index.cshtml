@@ -1,0 +1,56 @@
+﻿@model AppGateWay_Operation_FrontEnd.Models.UserInputModel
+
+@{
+	ViewData["Title"] = "Index";
+}
+<h2>Configure New Rule for Application Gateway</h2>
+<hr />
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="AddProbe">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label asp-for="FIName" class="control-label">FI Name</label>
+				<input asp-for="FIName" class="form-control" />
+				<span asp-validation-for="FIName" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Host" class="control-label">Host IP</label>
+				<input asp-for="Host" class="form-control" />
+				<span asp-validation-for="Host" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Port" class="control-label"></label>
+				<input asp-for="Port" class="form-control" />
+				<span asp-validation-for="Port" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Protocol" class="control-label"></label>
+				<input asp-for="Protocol" class="form-control" />
+				<span asp-validation-for="Protocol" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Probepath" class="control-label">Probe Path</label>
+				<input asp-for="Probepath" class="form-control" />
+				<span asp-validation-for="Probepath" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="RulePath" class="control-label">Rule Path</label>
+				<input asp-for="RulePath" class="form-control" />
+				<span asp-validation-for="RulePath" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="BrearerToken" class="control-label">Brearer Token</label>
+				<input asp-for="BrearerToken" class="form-control" />
+				<span asp-validation-for="BrearerToken" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Create" class="btn btn-default" />
+			</div>
+		</form>
+	</div>
+</div>
+
+@section Scripts {
+	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
